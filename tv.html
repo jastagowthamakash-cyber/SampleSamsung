@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAMSUNG All Products - Home Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+    <header class="header-sticky">
+        <div class="container nav-bar">
+            <h1><a href="home.html" style="color: var(--color-primary);">SAMSUNG</a></h1>
+            <nav class="nav-links">
+                <a href="mobile.html">Mobile</a>
+                <a href="tv.html">TV&AV</a>
+                <a href="appliances.html">Appliances</a>
+                <a href="computing.html">Computing & Displays</a>
+                <a href="wearables.html">Wearables</a>
+                <a href="accessories.html">Accessories</a>
+            </nav>
+            <div class="action-items">
+                <div class="search-box">
+                    <input type="text" placeholder="Search..." class="search-input">
+                    <button class="search-btn"><i class="fas fa-search"></i></button>
+                </div>
+                <button class="btn-primary" style="margin-left: 10px;"><i class="fas fa-shopping-cart"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1>Explore TV's</h1>
+        
+        <div class="top-filter-sort-header">
+            
+            <div class="filter-results-group">
+
+                <div class="horizontal-filter-row">
+
+                    <div class="filter-dropdown-box">
+                        <select style="padding: 8px 15px; border: 1px solid #ccc;">
+                            <option>Offers</option>
+                            <option>Black Friday</option>
+                            <option>Clearance</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-dropdown-box">
+                        <select style="padding: 8px 15px; border: 1px solid #ccc;">
+                            <option>Price</option>
+                            <option>$0 - $1000</option>
+                            <option>$1000 - $3000</option>
+                            <option>$3000+</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-dropdown-box">
+                        <select style="padding: 8px 15px; border: 1px solid #ccc;">
+                            <option>Screen Size</option>
+                            <option> 98" +</option>
+                            <option> 85" - 97"</option>
+                            <option> 75" - 84"</option>
+                            <option> 65" - 74"</option>
+                            <option> 55" - 64"</option>
+                            <option> 44" - 54"</option>
+                            <option> 33" - 43"</option>
+                            <option> 32" and smaller</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-dropdown-box">
+                        <select style="padding: 8px 15px; border: 1px solid #ccc;">
+                            <option>Type  </option>
+                            <option>QLED</option>
+                            <option>OLED</option>
+                        </select>
+                    </div>
+                    <div class="filter-dropdown-box">
+                        <select style="padding: 8px 15px; border: 1px solid #ccc;">
+                            <option>Key category</option>
+                            <option>AI Upscaling</option>
+                            <option>Smart Home Ready</option>
+                        </select>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="sort-by-group">
+                <label for="sortBy">Sort:</label>
+                <select id="sortBy" style="padding: 0.5rem 10px; border: 1px solid #ccc; margin-left: 5px;">
+                    <option value="match">Recommended</option>
+                    <option value="price-asc">Price: Low to High</option>
+                    <option value="newest">Newest</option>
+                </select>
+            </div>
+            
+        </div>
+        <div class="product-grid" id="productContainer" style="margin-top: 2rem;">
+            <a href="QLED98Q7F.html" class="product-card" data-price="2499" data-newness="3">
+                <div class="card-image-placeholder">
+                    <img src="QLED98Q7F.jpg" alt="98 Inch Class QLED Q7F" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="card-details">
+                    <h4>98 Inch Class QLED Q7F</h4>
+                    <p style="color: var(--color-muted); font-size: 0.9rem;">4K Vision AI Smart TV</p>
+                    <p class="price">$2,499</p>
+                </div>
+            </a>
+
+            <a href="#" class="product-card" data-price="1499" data-newness="5">
+                <div class="card-image-placeholder">
+                    <img src="QLED85Q6F.jpg" alt="85 Inch Class QLED Q6F" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="card-details">
+                    <h4>85 Inch Class QLED Q6F</h4>
+                    <p style="color: var(--color-muted); font-size: 0.9rem;">4K Smart TV</p>
+                    <p class="price">$1,499</p>
+                </div>
+            </a>
+
+            <a href="#" class="product-card" data-price="2499" data-newness="7">
+                <div class="card-image-placeholder">
+                     <img src="QLED65QN90F.jpeg" alt="65 Class Neo QLED QN90F" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="card-details">
+                    <h4>65 Class Neo QLED QN90F</h4>
+                    <p style="color: var(--color-muted); font-size: 0.9rem;">4K Vision AI Smart TV</p>
+                    <p class="price">$2,499</p>
+                </div>
+            </a>
+
+            <a href="#" class="product-card" data-price="1599" data-newness="7">
+                <div class="card-image-placeholder">
+                     <img src="QLED77S84F.jpg" alt="77 Inch Class OLED S84F" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="card-details">
+                    <h4>77 Inch Class OLED S84F</h4>
+                    <p style="color: var(--color-muted); font-size: 0.9rem;">4K Vision AI Smart TV</p>
+                    <p class="price">$1,599</p>
+                </div>
+            </a>
+            </div>
+    </main>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const selectElement = document.getElementById('sortBy');
+            const container = document.getElementById('productContainer');
+            const products = Array.from(container.querySelectorAll('.product-card'));
+
+            // If products array is empty, sorting won't work, ensure all 24 are loaded.
+            if (products.length === 0) {
+                console.warn("Product cards not found. Sorting script disabled.");
+                return;
+            }
+
+            function sortProducts(criteria) {
+                let sortedProducts;
+
+                switch (criteria) {
+                    case 'price-asc':
+                        sortedProducts = products.sort((a, b) => {
+                            const priceA = parseFloat(a.getAttribute('data-price'));
+                            const priceB = parseFloat(b.getAttribute('data-price'));
+                            return priceA - priceB;
+                        });
+                        break;
+                    
+                    case 'newest':
+                        sortedProducts = products.sort((a, b) => {
+                            const newA = parseFloat(a.getAttribute('data-newness') || 999);
+                            const newB = parseFloat(b.getAttribute('data-newness') || 999);
+                            return newA - newB;
+                        });
+                        break;
+
+                    case 'match':
+                    default:
+                        // 'Best Match' should be based on the initial HTML order
+                        sortedProducts = products;
+                        break;
+                }
+
+                // Append sorted elements back to the container
+                container.innerHTML = '';
+                sortedProducts.forEach(product => container.appendChild(product));
+            }
+
+            selectElement.addEventListener('change', (event) => {
+                sortProducts(event.target.value);
+            });
+            
+            // Initial load
+            sortProducts('match');
+        });
+    </script>
+
+    <footer>
+        <p class="small">&copy; 2025 SAMSUNG Product Catalogue (Sample Site). All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

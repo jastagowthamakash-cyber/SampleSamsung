@@ -1,0 +1,454 @@
+/* --- 1. CSS Variables & Global Resets --- */
+
+:root {
+    --color-primary: #000;          /* Main Samsung Black */
+    --color-secondary: #1a1a1a;     /* Darker shade for contrast (used in hero background) */
+    --color-accent: #1e70ff;       /* Subtle blue for CTAs/Links */
+    --light-bg: #f7f7f7;           /* Light gray for body/page background */
+    --color-text: #333;
+    --color-muted: #6c757d;        /* Muted gray text */
+    --font-family: 'Roboto', 'Arial', sans-serif; 
+    
+    /* Spacing Variables */
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 5rem;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    background-color: var(--light-bg);
+    color: var(--color-text);
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-text);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    font-weight: 700;
+}
+
+/* --- 2. Layout & Utility Classes --- */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* New PDP Flex Grid System */
+.flex-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -1rem; 
+    margin-right: -1rem;
+}
+
+.col {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+.section-padding {
+    padding: var(--spacing-lg) 0;
+}
+
+.text-center { text-align: center; }
+.text-muted { color: var(--color-muted); }
+.fw-bold { font-weight: 700; }
+
+/* --- 3. Header & Navigation (Consolidated) --- */
+
+.header-sticky {
+    position: sticky;
+    top: 0;
+    z-index: 1020;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,.05);
+    padding: 1rem 0;
+}
+
+/* Used in PLP (Product Listing Page) */
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-links a {
+    margin-left: 1.5rem;
+    font-weight: 600;
+}
+
+/* Used in PDP (Product Detail Page) */
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header-content nav {
+    display: none; /* Hidden on mobile */
+}
+.header-content nav a {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-left: 1.5rem;
+    padding: 0.5rem;
+}
+
+
+/* --- 4. Buttons & Actions --- */
+
+/* PLP Buttons */
+.btn-primary {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    border-radius: 4px; /* Added for consistency */
+}
+
+/* PDP Buttons (more generalized) */
+.btn {
+    padding: 0.75rem 1.75rem;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    transition: background-color 0.2s;
+    color: white;
+    border-radius: 0.25rem;
+    font-weight: 600;
+}
+.btn-dark {
+    background-color: var(--color-primary);
+}
+.btn-dark:hover {
+    background-color: #333;
+}
+.btn-accent {
+    background-color: var(--color-accent);
+}
+.btn-accent:hover {
+    background-color: #1a5ac9;
+}
+.btn-lg {
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+}
+
+/* Search Bar Styles */
+.action-items {
+    display: flex;
+    align-items: center;
+}
+
+.search-box {
+    display: flex;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-right: 10px; 
+}
+
+.search-input {
+    padding: 8px 10px;
+    border: none;
+    outline: none;
+    width: 150px;
+    font-size: 0.9rem;
+}
+
+.search-btn {
+    background-color: var(--light-bg);
+    border: none;
+    padding: 8px 10px;
+    cursor: pointer;
+    color: var(--color-text);
+}
+
+.search-btn:hover {
+    background-color: #eee;
+}
+
+.action-items .btn-primary {
+    padding: 8px 10px;
+}
+.action-items .btn-primary > i {
+    font-size: 1.1rem;
+}
+
+/* --- 5. Product Listing Page (PLP) Styles --- */
+
+.product-grid {
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); 
+    gap: 2rem;
+}
+
+.product-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: transform 0.2s;
+    display: block;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.card-image-placeholder {
+    height: 180px;
+    background-color: #e9ecef;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-muted);
+    font-size: 0.8rem;
+    text-align: center;
+    padding: 0; /* Ensures image fills container */
+}
+.card-image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+
+.card-details {
+    padding: 1rem;
+}
+
+.card-details h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.card-details .price {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    margin-top: 0.5rem;
+}
+
+/* --- 6. Sort & Filter Header (PLP) Styles --- */
+
+.top-filter-sort-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Aligned vertically */
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 15px;
+}
+
+.filter-results-group {
+    display: flex;
+    align-items: center; 
+    flex-grow: 1;
+    padding-right: 20px; 
+}
+
+.horizontal-filter-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px; 
+}
+
+/* Filter Dropdown Styling (applies to all filter select boxes) */
+
+.filter-dropdown-box {
+    position: relative; 
+    display: inline-block;
+}
+
+.filter-dropdown-box select {
+    appearance: none; 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    
+    background-color: white;
+    font-size: 0.95rem;
+    cursor: pointer;
+    border-radius: 4px;
+    
+    /* Increased padding to prevent arrow overlap */
+    padding: 8px 40px 8px 15px; 
+    border: 1px solid #ccc;
+}
+
+/* Inject the down arrow icon (\f107) into filter dropdowns */
+.filter-dropdown-box::after {
+    content: '\f107'; /* Font Awesome angle-down icon */
+    font-family: 'Font Awesome 6 Free'; 
+    font-weight: 900; 
+    
+    position: absolute;
+    top: 50%;
+    right: 15px; /* Adjusted position */
+    transform: translateY(-50%);
+    pointer-events: none; 
+    color: var(--color-text);
+}
+
+/* Sort Dropdown Styling (Right side) */
+
+.sort-by-group {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    white-space: nowrap; 
+    position: relative; 
+}
+
+.sort-by-group select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    
+    /* Increased padding to prevent arrow overlap */
+    padding-right: 40px !important; 
+}
+
+/* Inject the down arrow icon (\f107) into the Sort dropdown */
+.sort-by-group::after {
+    content: '\f107'; 
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900; 
+    
+    position: absolute;
+    top: 50%;
+    right: 10px; 
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: var(--color-text);
+    font-size: 0.8rem;
+}
+
+
+/* --- 7. Product Detail Page (PDP) Styles --- */
+
+/* Hero Section (from PDP HTML) */
+.hero-section {
+    height: 80vh;
+    background-color: var(--secondary-color);
+    color: white;
+    padding-top: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.hero-section h1 {
+    font-size: 3rem;
+}
+.hero-image-placeholder {
+    width: 90%;
+    max-width: 800px;
+    height: 400px;
+    background: linear-gradient(135deg, #333 0%, #000 100%);
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Feature Blocks (from PDP HTML) */
+.feature-block {
+    margin-bottom: var(--spacing-md);
+}
+.feature-block i {
+    font-size: 2.5rem;
+    color: var(--color-accent);
+    margin-bottom: 1rem;
+}
+
+/* Accessories List (from PDP HTML) */
+.accessories-list {
+    padding-left: 0;
+    list-style: none;
+    margin-top: 2rem;
+    display: inline-block;
+    text-align: left;
+}
+.accessories-list li {
+    margin-bottom: 0.75rem;
+    font-size: 1.05rem;
+}
+.accessories-list i {
+    color: green;
+    margin-right: 0.5rem;
+}
+
+/* Specs Table (from PDP HTML) */
+.specs-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.specs-table th, .specs-table td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #dee2e6;
+}
+.specs-table th {
+    background-color: #f8f9fa;
+    width: 35%;
+    font-weight: 500;
+}
+.specs-table tbody tr:nth-child(even) th, .specs-table tbody tr:nth-child(even) td {
+    background-color: #f2f2f2;
+}
+
+/* --- 8. Footer --- */
+
+footer {
+    background-color: var(--color-primary);
+    color: white;
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 3rem;
+    font-size: 0.8rem;
+}
+
+
+/* --- 9. Media Queries (PLP & PDP) --- */
+
+@media (min-width: 768px) {
+    /* Responsive Columns */
+    .col-md-3
+    {
+        width: 25%;
+    }
+    .col-md-4 {
+        width: 33.33%;
+    }
+}
